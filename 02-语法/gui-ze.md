@@ -17,7 +17,19 @@ $$a_0←a_1...,a_m,¬a_{m+1},...,¬a_n$$
 * $$B(r)^- = \{a_{m+1}, ..., a_n\}$$，表示否定的规则body
 * $$A(P) = \cup_{r\in P}\{H(r)\cup B(r)^+ \cup B(r)^-\}$$，表示对于一个逻辑程序P的原子集合_**A**_
 
-在具体的程序中，以clingo为例，它的语法为
+规则的例子如下：
+
+* $$a \leftarrow b, \neg c$$
+* $$a \leftarrow$$
+* $$a \leftarrow b$$
+* $$a \leftarrow \neg c$$
+* $$bachelor(mike) \leftarrow male(mike), \neg married(mike)$$
+
+{% hint style="info" %}
+在第二个例子$$a \leftarrow$$中，body为空，这样的语法也是合法的，这代表head可以被无条件地推导
+{% endhint %}
+
+对于更为具体的程序，以clingo为例，它的语法为
 
 $$
 a_0\ :- \ a_1,..., a_m,\ not 
